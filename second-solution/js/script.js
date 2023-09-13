@@ -7,14 +7,11 @@ const isNotNecessaryAdd = (userInput) => userInput.trim() === '';
 const addLi = (userInput) => {
   const li = document.createElement('li');
   li.textContent = userInput;
-  const cloneLi = li.cloneNode(true);
-  list.appendChild(cloneLi);
+  list.insertAdjacentElement('beforeend', li);
 };
 
 const clearList = () => {
-  while (list.firstChild) {
-    list.removeChild(list.firstChild);
-  }
+    list.textContent = '';
 };
 
 const fillList = () => {
